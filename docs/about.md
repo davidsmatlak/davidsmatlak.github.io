@@ -1,8 +1,17 @@
-# README
+---
+layout: default
+title: About
+date: 2021-02-28
+---
 
-## Repository information
+## About me
 
-A repository for my technical writing samples with original content, code samples, and screenshots.
+Hi, my name is David Smatlak and I'm a technical writer in Seattle, WA. This repository and website
+contain my technical writing samples for topics that I find interesting. I do all the research and
+develop all the original content, screenshots, and code samples.
+
+## Software
+
 To maintain the repository and build the site I use the following software:
 
 | Application | Purpose |
@@ -17,6 +26,6 @@ To maintain the repository and build the site I use the following software:
 ## License
 
 If you want to share or redistribute any content, images, or code samples from this website, please
-follow the license guidelines:
+follow the license guidelines.
 
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <a xmlns:cc="http://creativecommons.org/ns#" href="https://davidsmatlak.github.io/" property="cc:attributionName" rel="cc:attributionURL">David Smatlak</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+{% include license.html %}

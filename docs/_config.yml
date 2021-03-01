@@ -1,0 +1,31 @@
+# site theme
+# Learn more: https://github.com/jekyll/minima/blob/v2.5.1/README.md
+theme: minima
+
+# site.title
+title: Technical writing samples
+
+# site.author
+author: David Smatlak
+
+# site.description
+description: This website contains original technical writing samples written by David Smatlak.
+
+# Pages that display navigation links in header
+header_pages:
+  - about.md
+  - style-guide.md
+
+# Include post excerpts on blog page
+# True = show excerpts, False = no excerpts
+show_excerpts: false
+
+# Social media
+github_username: davidsmatlak
+linkedin_username: davidsmatlak
+twitter_username: davidsmatlak
+
+# Not using RSS. To enable, remove commented code from home.html, Gemfile, and config.yml
+# jekyll-feed for Atom (RSS) feed
+# plugins:
+#  - jekyll-feed

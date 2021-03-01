@@ -1,0 +1,56 @@
+---
+---
+
+/*
+gem: minima-2.5.1
+Add this file to GitHub repo as: /assets/main.scss
+For more information, see https://github.com/jekyll/minima/blob/v2.5.1/README.md
+Open the repo or README file, click the branch drop down and select the tag to get the files for your minima gem version.
+*/
+
+/*
+To use an alert box for tip, note, alert, or danger
+add code to an HTML or Markdown file:
+
+<div class="tip">
+This is an alert box.
+</div>
+
+*/
+
+@import "minima";
+
+
+/* The tip message box */
+.tip {
+  padding: 20px;
+  background-color: #a1f3a8; /* Green */
+  color: black;
+  margin-bottom: 15px;
+}
+
+
+/* The note message box */
+.note {
+  padding: 20px;
+  background-color: #eba3f5; /* Purple */
+  color: black;
+  margin-bottom: 15px;
+}
+
+/* The warning message box */
+.warning {
+  padding: 20px;
+  background-color: #f2f3a1; /* Yellow */
+  color: black;
+  margin-bottom: 15px;
+}
+
+
+/* The danger message box */
+.danger {
+  padding: 20px;
+  background-color: #f5594e; /* Red */
+  color: black;
+  margin-bottom: 15px;
+}

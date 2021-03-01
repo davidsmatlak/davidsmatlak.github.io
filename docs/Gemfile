@@ -1,0 +1,9 @@
+# Rubygems source
+source "https://rubygems.org"
+
+# Minima theme gem
+gem "minima", "~> 2.5"
+
+# Not using RSS. To enable, remove commented code from home.html, Gemfile, and config.yml
+# jekyll-feed for Atom (RSS) feed
+# gem "jekyll-feed"
