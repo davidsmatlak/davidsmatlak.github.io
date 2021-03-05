@@ -1,14 +1,8 @@
 ---
 layout: default
-title: About
-date: 2021-02-28
+title: Site info
+date: 2021-03-04
 ---
-
-## About me
-
-Hi, my name is David Smatlak and I'm a technical writer in Seattle, WA. This repository and website
-contain my technical writing samples for topics that I find interesting. I do all the research and
-develop all the original content, screenshots, and code samples.
 
 ## Software
 
