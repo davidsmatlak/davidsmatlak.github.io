@@ -33,8 +33,7 @@ configurations.
 
 ## Create a repository
 
-To begin, you'll create a GitHub repository. This repository is referred to as `origin` later in the
-article.
+To begin, you'll create a GitHub repository.
 
 1. Sign in to [GitHub](https://github.com).
 1. On the top, right of the screen, select the plus sign (`+`).
@@ -59,13 +58,14 @@ add, change, or delete files.
     - Use the keyboard shortcut **Ctrl** + **Shift** + **`** (backtick).
 
 1. Use PowerShell commands to create a directory for your repository and switch to that directory.
-   For example, _C:\github\clonedemo_. `New-Item` creates the directory and `Set-Location` switches
-   to the specified directory.
 
     ```powershell
     New-Item -Path "C:\github\clonedemo" -ItemType Directory
     Set-Location -Path "C:\github\clonedemo"
     ```
+
+    `New-Item` creates the directory _C:\github\clonedemo_ and `Set-Location` switches to the
+    directory.
 
 1. From GitHub, go to your repository's **Code** tab and select the **Code** button.
 1. Select **HTTPS** and use the clipboard icon to copy the URL.
@@ -76,7 +76,7 @@ add, change, or delete files.
     git clone https://github.com/<GitHub account>/testrepo.git
     ```
 
-    The output displays the progress.
+    The output shows the progress.
 
     ```plaintext
     Cloning into 'testrepo'...
@@ -95,26 +95,31 @@ add, change, or delete files.
 ### Verify the remote
 
 When you clone a repository, the `origin` remote is created with `fetch` and `push`. A remote is a
-shortcut name for the repository's GitHub URL. The `fetch` command pulls changes from GitHub to your
-computer. The `push` uploads your changes to GitHub. Both of these commands are used to keep your
-repository in sync.
+shortcut name for the repository's GitHub URL. The `fetch` downloads repository changes from GitHub
+to your computer and `push` uploads changes from your cloned repository to GitHub. The commands are
+used to keep your repository in sync.
 
-<div class="note">
-<b>Note</b> <br>
-For a single-user repository only <code>origin</code> is necessary. When you work with a shared
-repository, you'll use additional remote names.
-</div>
+To view the cloned repository's remote name and URL, use the `git remote` command.
 
 ```plaintext
 git remote -v
 ```
+
+The output displays your repository's remote name and URL.
 
 ```plaintext
 origin  https://github.com/<GitHub account>/testrepo.git (fetch)
 origin  https://github.com/<GitHub account>/testrepo.git (push)
 ```
 
-For more information about how to manage remotes, see [About remote repositories](https://docs.github.com/github/getting-started-with-github/about-remote-repositories).
+<div class="note">
+<b>Note</b> <br>
+For a single-user repository only <code>origin</code> is necessary. When you work with a shared
+repository, you'll use additional remote names. For more information about how to manage remotes,
+see <a
+href="https://docs.github.com/github/getting-started-with-github/about-remote-repositories">About
+remote repositories</a>.
+</div>
 
 ## Change a file
 
@@ -122,12 +127,13 @@ Git is version control software that tracks changes to files. To see changes tha
 use the `git status` command. In this example, you'll add some text to the _README.md_ file and save
 the change.
 
-1. In the VS Code terminal, view the cloned repository's status and verify the output shows
-   **nothing to commit, working tree clean**.
+1. In the VS Code terminal, display the cloned repository's status.
 
     ```plaintext
     git status
     ```
+
+    The output shows **nothing to commit, working tree clean**.
 
     ```plaintext
     On branch main
@@ -136,13 +142,13 @@ the change.
     nothing to commit, working tree clean
     ```
 
-1. Run the `code` command to open _README.md_ in VS Code and update the file.
+1. To open _README.md_ in VS Code, use the `code` command. Then update and save the file.
 
     ```plaintext
     code README.md
     ```
 
-1. Run `git status` and the output shows there are **Changes not staged for commit**.
+1. Run `git status` and verify the output shows there are **Changes not staged for commit**.
 
     ```plaintext
     On branch main
@@ -175,7 +181,7 @@ the change.
 
 ## Commit a change
 
-When a file is changed in the cloned repository, you commit the change and then push the commit to
+After a file is changed in your cloned repository, you commit the change and then push the commit to
 your GitHub repository. When you commit changes, include a brief message that describes the commit
 and is included in the commit history. The `push` syncs your clone with GitHub and the commit
 history is the same in both places.
@@ -204,13 +210,13 @@ history is the same in both places.
     nothing to commit, working tree clean
     ```
 
-1. Run the `push` command. The `origin` shortcut references the cloned repository's remote URL.
+1. To upload the commit to GitHub run the `push` command.
 
     ```plaintext
     git push origin main
     ```
 
-    The output shows the status as the changes are uploaded to GitHub.
+    The output shows the status as the commit is uploaded.
 
     ```plaintext
     Enumerating objects: 5, done.
