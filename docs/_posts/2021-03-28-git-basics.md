@@ -1,21 +1,19 @@
 ---
 layout: post
-title:  Get started with Git and GitHub
+title:  "Git basics: Get started with Git and GitHub"
 author: David Smatlak
 permalink: git-basics
 comments: false
 ---
 
-Many organizations treat documentation as code, so technical writers need to know how to use [Git](https://git-scm.com)
-and [GitHub](https://github.com) for version control. This article is a user guide for the basic
-workflow to work with a repository. You'll learn how to create, clone, and commit changes to a
-repository.
+Many organizations treat documentation as code, so technical writers need to know how to use [Git](https://git-scm.com/docs)
+and [GitHub](https://docs.github.com/github) for version control. This article is a user guide for
+the basic workflow to work with a repository. You'll learn how to create, clone, and commit changes
+to a repository.
 
 <div class="note">
 <b>Note</b> <br>
-This article creates a repository for a single-user to commit changes in the main branch. More
-advanced topics such as branches, merges, upstream remotes, and pull requests will be covered in
-future articles.
+This article is written as a beginners guide for Git and GitHub. The repository is set up for one person to learn the command syntax. Some steps verify that a command worked as intended so that you can see the results and understand the concepts.
 </div>
 
 ## Prerequisites
@@ -242,4 +240,4 @@ repository's <b>Code</b> tab and select <b>Commits</b>.
 ## Conclusion
 
 In this article you set up a GitHub repository, cloned the repository, and committed a change to
-GitHub. This is the basic workflow to work with a repository using Git and GitHub.
+GitHub. To learn more about how to manage your repository, continue to [Git basics: How to branch and merge](git-basics-branch-merge).
