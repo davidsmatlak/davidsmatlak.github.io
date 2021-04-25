@@ -13,7 +13,9 @@ to a repository.
 
 <div class="note">
 <b>Note</b> <br>
-This article is written as a beginners guide for Git and GitHub. The repository is set up for one person to learn the command syntax. Some steps verify that a command worked as intended so that you can see the results and understand the concepts.
+This article is written as a beginners guide for Git and GitHub. The repository is set up for one
+person to learn the command syntax. Some steps verify that a command worked as intended so that you
+can see the results and understand the concepts.
 </div>
 
 ## Prerequisites

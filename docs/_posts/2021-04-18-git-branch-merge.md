@@ -6,18 +6,26 @@ permalink: git-basics-branch-merge
 comments: false
 ---
 
-This article describes how to use a working branch and then merge the changes to your default branch. A working branch is used to make changes and commits without any affect on your default branch. When you're happy with the changes in the working branch, merge the commits to your default branch.
+This article describes how to use a working branch and then merge the changes to your default
+branch. A working branch is used to make changes and commits without any affect on your default
+branch. When you're happy with the changes in the working branch, merge the commits to your default
+branch.
 
-Visual Studio Code (VS Code) is used as the Markdown editor and the terminal for Git commands. If you need to set up your environment or create a repository, see [Git basics: Get started with Git and GitHub](git-basics).
+Visual Studio Code (VS Code) is used as the Markdown editor and the terminal for Git commands. If
+you need to set up your environment or create a repository, see [Git basics: Get started with Git and GitHub](git-basics).
 
 <div class="note">
 <b>Note</b> <br>
-This article is written as a beginners guide for Git and GitHub. The repository is set up for one person to learn the command syntax. Some steps verify that a command worked as intended so that you can see the results and understand the concepts.
+This article is written as a beginners guide for Git and GitHub. The repository is set up for one
+person to learn the command syntax. Some steps verify that a command worked as intended so that you
+can see the results and understand the concepts.
 </div>
 
 ## Branch overview
 
-Repositories have several types of branches: default, remote, and working. The default branch is a repository's single-source of truth. A working branch might also be referred to as a _feature branch_.
+Repositories have several types of branches: default, remote, and working. The default branch is a
+repository's single-source of truth. A working branch might also be referred to as a _feature
+branch_.
 
 | Branch | Description |
 | ---- | ---- |
@@ -29,7 +37,8 @@ Repositories have several types of branches: default, remote, and working. The d
 
 Make sure that your GitHub repository and your local clone are in sync. Changes can be committed on
 GitHub, so it's a best practice to make sure you're working with the most current files. This step
-becomes more important when you work with shared repositories where multiple people update a repository.
+becomes more important when you work with shared repositories where multiple people update a
+repository.
 
 1. Launch VS Code.
 1. Open your local clone's directory: **File** > **Open Folder**.
@@ -54,11 +63,14 @@ becomes more important when you work with shared repositories where multiple peo
     git merge origin/main
     ```
 
-    You use `git fetch` to pull any changes from GitHub to your local clone. The `git merge` command merges changes from the GitHub remote branch `origin/main` into your `main` branch. If the GitHub repository and local clone are in sync, **Already up to date** is displayed.
+    You use `git fetch` to pull any changes from GitHub to your local clone. The `git merge` command
+    merges changes from the GitHub remote branch `origin/main` into your `main` branch. If the
+    GitHub repository and local clone are in sync, **Already up to date** is displayed.
 
 ## Create a working branch
 
-Create a working branch in your local clone and push it to GitHub. You'll use this branch to update files and commit changes.
+Create a working branch in your local clone and push it to GitHub. You'll use this branch to update
+files and commit changes.
 
 1. Create a working branch from the `main` branch.
 
@@ -66,12 +78,12 @@ Create a working branch in your local clone and push it to GitHub. You'll use th
     git checkout -b my-new-branch
     ```
 
-    The `git checkout` command combines two tasks:
+    The `git checkout` command combines two tasks. The command creates a new branch and switches to
+    the new branch to make it active. It's similar to doing `git branch <branch name>` and
+    `git checkout <branch name>`.
 
-    - `git branch <working branch>`
-    - `git checkout <branch name>`.
-
-    The output shows that `git checkout -b` created a new branch named `my-new-branch` and then switched to that branch.
+    The output shows that `git checkout -b` created a new branch named `my-new-branch` and then
+    switched to that branch.
 
     ```plaintext
     Switched to a new branch 'my-new-branch'
@@ -83,7 +95,8 @@ Create a working branch in your local clone and push it to GitHub. You'll use th
     git branch
     ```
 
-    The output lists the branches and the asterisk (`*`) confirms `my-new-branch` is active. Any changes to the repository's files are now tracked in `my-new-branch`.
+    The output lists the branches and the asterisk (`*`) confirms `my-new-branch` is active. Any
+    changes to the repository's files are now tracked in `my-new-branch`.
 
     ```plaintext
       main
@@ -110,7 +123,8 @@ Create a working branch in your local clone and push it to GitHub. You'll use th
 
 ## Edit a file
 
-Use the working branch to add, change, or delete files. In this example, you'll update the _README.md_ file and push the commit to GitHub.
+Use the working branch to add, change, or delete files. In this example, you'll update the
+_README.md_ file and push the commit to GitHub.
 
 1. In VS Code, open _README.md_.
 1. Add a sentence to the file and save the change.
@@ -120,7 +134,8 @@ Use the working branch to add, change, or delete files. In this example, you'll 
     git status
     ```
 
-    The output shows that in `my-new-branch` the _README.md_ file was changed with the status **Changes not staged for commit**.
+    The output shows that in `my-new-branch` the _README.md_ file was changed with the status
+    **Changes not staged for commit**.
 
     ```plaintext
     On branch my-new-branch
@@ -139,7 +154,9 @@ Use the working branch to add, change, or delete files. In this example, you'll 
     git status
     ```
 
-    The `git add` command stages the modified file so it can be committed. The period (`.`) indicates that any modified file will be staged. An alternative is to specify the file with `git add README.md`.
+    The `git add` command stages the modified file so it can be committed. The period (`.`)
+    indicates that any modified file will be staged. An alternative is to specify the file with
+    `git add README.md`.
 
     The `git status` output shows **Changes to be committed**.
 
@@ -156,7 +173,8 @@ Use the working branch to add, change, or delete files. In this example, you'll 
     git commit -m "updates README.md"
     ```
 
-    The `git commit -m` command commits the change with the commit message within double-quotes. This message is displayed on GitHub and in the `git log` history.
+    The `git commit -m` command commits the change with the commit message within double-quotes.
+    This message is displayed on GitHub and in the `git log` history.
 
     The output shows the successful commit and the commit's unique hash: `9d377a0`.
 
@@ -199,7 +217,8 @@ Use the working branch to add, change, or delete files. In this example, you'll 
 
 ## Compare files
 
-Compare files between your branches on GitHub. This comparison shows the differences between your `main` branch and `my-new-branch`.
+Compare files between your branches on GitHub. This comparison shows the differences between your
+`main` branch and `my-new-branch`.
 
 1. Sign in to [GitHub](https://github.com/login).
 1. Go to your GitHub repository named `testrepo` and select the **Code** tab.
@@ -207,11 +226,13 @@ Compare files between your branches on GitHub. This comparison shows the differe
 1. Open `main` and `my-new-branch` in separate browser tabs.
 1. View the _README.md_ file in each branch.
 
-The _README.md_ files are different because you changed the file in `my-new-branch` and that change doesn't affect the `main` branch.
+The _README.md_ files are different because you changed the file in `my-new-branch` and that change
+doesn't affect the `main` branch.
 
 ## Merge changes
 
-When the committed changes in your working branch are ready for publication, merge the commits to your `main` branch. When you push the commit to GitHub, your changes are live in the `main` branch.
+When the committed changes in your working branch are ready for publication, merge the commits to
+your `main` branch. When you push the commit to GitHub, your changes are live in the `main` branch.
 
 1. In a VS Code terminal, checkout the `main` branch.
 
@@ -269,8 +290,12 @@ When the committed changes in your working branch are ready for publication, mer
        b897559..9d377a0  main -> main
     ```
 
-1. [Compare](#compare-files) the _README.md_ files again and verify the files in `main` and `my-new-branch` contain the same content.
+1. [Compare](#compare-files) the _README.md_ files again and verify the files in `main` and
+   `my-new-branch` contain the same content.
 
 ## Conclusion
 
-In this article you created a working branch, updated a file, and merged the commit into your default branch. When you combine these skills with the skills learned in [Git basics: Get started with Git and GitHub](git-basics), you can maintain your repository. To learn more, see the documentation for [Git](https://git-scm.com/docs) and [GitHub](https://docs.github.com/github).
+In this article you created a working branch, updated a file, and merged the commit into your
+default branch. When you combine these skills with the skills learned in [Git basics: Get started with Git and GitHub](git-basics),
+you can maintain your repository. To learn more, see the documentation for [Git](https://git-scm.com/docs)
+and [GitHub](https://docs.github.com/github).
