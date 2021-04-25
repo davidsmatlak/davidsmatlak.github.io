@@ -6,7 +6,7 @@ permalink: git-basics-branch-merge
 comments: false
 ---
 
-This article describes how to use a working branch and then merge the changes to your main branch. A working branch is used to make changes and commits without any effect on your main branch. When you're happy with the changes in the working branch, merge the commits to your main branch.
+This article describes how to use a working branch and then merge the changes to your default branch. A working branch is used to make changes and commits without any affect on your default branch. When you're happy with the changes in the working branch, merge the commits to your default branch.
 
 Visual Studio Code (VS Code) is used as the Markdown editor and the terminal for Git commands. If you need to set up your environment or create a repository, see [Git basics: Get started with Git and GitHub](git-basics).
 
@@ -17,17 +17,19 @@ This article is written as a beginners guide for Git and GitHub. The repository 
 
 ## Branch overview
 
-Repositories have several types of branches: default, remote, and working. The default branch is a repository's single-source of truth.
+Repositories have several types of branches: default, remote, and working. The default branch is a repository's single-source of truth. A working branch might also be referred to as a _feature branch_.
 
 | Branch | Description |
 | ---- | ---- |
-| **Default** | The repository's branch named `main`. You can commit changes directly to `main` but a best practice is to merge commits from a working branch. <br><br>Use `git branch` to display branches. The branch tagged with an asterisk (`*`) is the active branch. |
-| **Remote** | Each branch has a remote branch in GitHub. For example, in your local clone, `origin/main`. <br><br>Use `git branch -r` to display your clone's remote branches. |
-| **Working** | Create a working branch from the `main` branch. A working branch is a reference point in the repository's file tracking, not a copy of the repository or files. <br><br>Changes in the working branch don't affect the default branch. |
+| **Default** | The repository's branch named `main`. You can commit changes directly to `main` but a best practice is to merge commits from a working branch. <br><br> Use `git branch` to display the local clone's list of branches. The branch tagged with an asterisk (`*`) is the active branch. |
+| **Remote** | Each branch has a remote branch in GitHub. For example, in your local clone, `origin/main` is the remote branch for `main`. <br><br> Use `git branch -r` to display your local clone's remote branches. |
+| **Working** | Create a working branch from the `main` branch. The commit history is identical and the most recent commit is the base of the two branches. As you commit changes in the working branch, it diverges and its commit history is ahead of the `main` branch. Use `git log` to display the commit history. <br><br> Changes in the working branch don't affect the default branch. To publish changes in your working branch, merge the working branch commits into the `main` branch. |
 
 ## Sync the repository
 
-Make sure that your GitHub repository and your local clone are in sync. Changes can be committed on GitHub, so it's a best practice to make sure you're working with the most current files. This step becomes more important when you work with shared repositories where multiple people update files.
+Make sure that your GitHub repository and your local clone are in sync. Changes can be committed on
+GitHub, so it's a best practice to make sure you're working with the most current files. This step
+becomes more important when you work with shared repositories where multiple people update a repository.
 
 1. Launch VS Code.
 1. Open your local clone's directory: **File** > **Open Folder**.
@@ -56,15 +58,20 @@ Make sure that your GitHub repository and your local clone are in sync. Changes 
 
 ## Create a working branch
 
-To update files, create a working branch.
+Create a working branch in your local clone and push it to GitHub. You'll use this branch to update files and commit changes.
 
-1. Create a new branch.
+1. Create a working branch from the `main` branch.
 
     ```plaintext
     git checkout -b my-new-branch
     ```
 
-    The output shows that `git checkout` command created a new branch named `my-new-branch` and then switched to that branch.
+    The `git checkout` command combines two tasks:
+
+    - `git branch <working branch>`
+    - `git checkout <branch name>`.
+
+    The output shows that `git checkout -b` created a new branch named `my-new-branch` and then switched to that branch.
 
     ```plaintext
     Switched to a new branch 'my-new-branch'
@@ -192,7 +199,7 @@ Use the working branch to add, change, or delete files. In this example, you'll 
 
 ## Compare files
 
-Compare files between your branches on GitHub.
+Compare files between your branches on GitHub. This comparison shows the differences between your `main` branch and `my-new-branch`.
 
 1. Sign in to [GitHub](https://github.com/login).
 1. Go to your GitHub repository named `testrepo` and select the **Code** tab.
@@ -204,7 +211,7 @@ The _README.md_ files are different because you changed the file in `my-new-bran
 
 ## Merge changes
 
-When the committed changes in your working branch are ready for publication, merge the commits to your main branch. When you push the commit to GitHub, your changes are live in the main branch.
+When the committed changes in your working branch are ready for publication, merge the commits to your `main` branch. When you push the commit to GitHub, your changes are live in the `main` branch.
 
 1. In a VS Code terminal, checkout the `main` branch.
 
@@ -232,7 +239,7 @@ When the committed changes in your working branch are ready for publication, mer
      1 file changed, 1 insertion(+), 1 deletion(-)
     ```
 
-1. Verify the status of `main`.
+1. Verify the status of the `main` branch.
 
     ```plaintext
     git status
@@ -266,4 +273,4 @@ When the committed changes in your working branch are ready for publication, mer
 
 ## Conclusion
 
-In this article you created a working branch, updated a file, and merged the change with your main branch. When you combine these skills with the skills learned in [Git basics: Get started with Git and GitHub](git-basics), you can maintain your repository. To learn more, see the documentation for [Git](https://git-scm.com/docs) and [GitHub](https://docs.github.com/github).
+In this article you created a working branch, updated a file, and merged the commit into your default branch. When you combine these skills with the skills learned in [Git basics: Get started with Git and GitHub](git-basics), you can maintain your repository. To learn more, see the documentation for [Git](https://git-scm.com/docs) and [GitHub](https://docs.github.com/github).

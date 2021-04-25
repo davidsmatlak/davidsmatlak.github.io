@@ -16,7 +16,7 @@ for a link.
 | Format | Description | Markdown |
 | ---- | ---- | ---- |
 | **Bold** | User interface elements and input field names. <br> To improve readability and emphasize important information. | `**Bold**` |
-| _Italics_ | User input, paths, folders, application, and filenames. | `_Italics_` |
+| _Italics_ | User input, paths, folders, application, and filenames. <br> Used to introduce new terminology or keywords. | `_Italics_` |
 | `Code` | Commands, code syntax, properties, language keywords, error codes. <br> Links that don't need to navigate to a site. | `` `Code` `` |
 
 ## Placeholder
