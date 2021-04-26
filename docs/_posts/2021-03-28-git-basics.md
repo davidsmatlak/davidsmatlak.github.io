@@ -53,10 +53,7 @@ file is displayed and includes the repository's name and description.
 A clone is a copy of a repository that you download to your computer. You use a cloned repository to
 add, change, or delete files.
 
-1. Launch VS Code and open a terminal session with one of the following methods:
-    - From the menu select **Terminal** > **New Terminal**.
-    - Use the keyboard shortcut **Ctrl** + **Shift** + **`** (backtick).
-
+1. Launch VS Code and open a terminal: **Terminal** > **New Terminal**.
 1. Use PowerShell commands to create a directory for your repository and switch to that directory.
 
     ```powershell
@@ -69,8 +66,7 @@ add, change, or delete files.
 
 1. From GitHub, go to your repository's **Code** tab and select the **Code** button.
 1. Select **HTTPS** and use the clipboard icon to copy the URL.
-1. From the VS Code terminal, clone the repository. Replace `<GitHub account>` including the angle
-   brackets with your GitHub account.
+1. From the VS Code terminal, paste the link to clone the repository.
 
     ```plaintext
     git clone https://github.com/<GitHub account>/testrepo.git
@@ -238,6 +234,16 @@ An optional step is to confirm the commit history is identical between your loca
 In a VS Code terminal, run <code>git log</code> to display the commits. On GitHub, go to your
 repository's <b>Code</b> tab and select <b>Commits</b>.
 </div>
+
+## Clean up
+
+When you're done and no longer need the repository, delete your repository from GitHub and the local clone.
+
+1. From GitHub, there's a drop-down menu at the top, right of the page. Select **Your repositories**
+1. Select **testrepo**.
+1. Select **Settings** and scroll down to **Danger Zone**.
+1. Select **Delete this repository** and follow the prompts.
+1. To delete your local clone, remove _C:\github\clonedemo\testrepo_.
 
 ## Conclusion
 

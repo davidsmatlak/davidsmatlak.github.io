@@ -11,8 +11,9 @@ branch. A working branch is used to make changes and commits without any affect 
 branch. When you're happy with the changes in the working branch, merge the commits to your default
 branch.
 
-Visual Studio Code (VS Code) is used as the Markdown editor and the terminal for Git commands. If
-you need to set up your environment or create a repository, see [Git basics: Get started with Git and GitHub](git-basics).
+Visual Studio Code (VS Code) is used as the Markdown editor and the terminal for Git commands. This
+article uses the _testrepo_ repository that was created in [Git basics: Get started with Git and GitHub](git-basics).
+If you need to set up your environment or create the repository, refer to that article.
 
 <div class="note">
 <b>Note</b> <br>
@@ -42,6 +43,7 @@ repository.
 
 1. Launch VS Code.
 1. Open your local clone's directory: **File** > **Open Folder**.
+1. Go to _C:\github\clonedemo\testrepo_ and choose **Select Folder**.
 1. Open a VS Code terminal: **Terminal** > **New Terminal**.
 1. Checkout the `main` branch.
 
@@ -293,9 +295,18 @@ your `main` branch. When you push the commit to GitHub, your changes are live in
 1. [Compare](#compare-files) the _README.md_ files again and verify the files in `main` and
    `my-new-branch` contain the same content.
 
+## Clean up
+
+When you're done and no longer need the repository, delete your repository from GitHub and the local clone.
+
+1. From GitHub, there's a drop-down menu at the top, right of the page. Select **Your repositories**
+1. Select **testrepo**.
+1. Select **Settings** and scroll down to **Danger Zone**.
+1. Select **Delete this repository** and follow the prompts.
+1. To delete your local clone, remove _C:\github\clonedemo\testrepo_.
+
 ## Conclusion
 
 In this article you created a working branch, updated a file, and merged the commit into your
 default branch. When you combine these skills with the skills learned in [Git basics: Get started with Git and GitHub](git-basics),
-you can maintain your repository. To learn more, see the documentation for [Git](https://git-scm.com/docs)
-and [GitHub](https://docs.github.com/github).
+you can maintain your repository. To learn about how to work in a shared respository, see [Git basics: Create a fork and submit a pull request](git-fork-pull-request).
