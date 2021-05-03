@@ -4,7 +4,7 @@ title:  Docs-as-code concepts
 author: David Smatlak
 permalink: docs-as-code-concepts
 comments: false
-description: This article explains docs-as-code concepts that are used for documentation.
+description: This article describes docs-as-code concepts that are used for documentation.
 ---
 
 _Docs-as-code_ is a framework to create documentation using workflows and tools that are used in

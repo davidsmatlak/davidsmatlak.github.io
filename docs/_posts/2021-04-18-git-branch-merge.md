@@ -4,6 +4,7 @@ title:  "Git basics: How to branch and merge"
 author: David Smatlak
 permalink: git-basics-branch-merge
 comments: false
+description: This article describes how to use Git to create a branch and merge commits.
 ---
 
 This article describes how to use a working branch and then merge the changes to your default

@@ -4,6 +4,7 @@ title: Set up a Jekyll web development system
 author: David Smatlak
 permalink: jekyll-web-dev
 comments: false
+description: This articles describes how to set up a Jekyll web development system using Windows Subsystem for Linux.
 ---
 
 This article describes how to set up Windows Subsystem for Linux (WSL) on Windows 10 and then
@@ -17,7 +18,7 @@ sessions. The commands include the following syntax:
 
 - `sudo` prompts you for your password but runs commands with administrator permissions.
 - `&&` indicates that a command must be successful before the next command is run.
-- `--yes` suppresses prompts.
+- `--yes` suppresses prompts and accepts changes.
 - Angle brackets `<>` are a placeholder for your input. Replace the placeholder value and brackets with your value.
 
 <div class="note">

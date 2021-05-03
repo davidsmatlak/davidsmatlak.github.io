@@ -4,6 +4,7 @@ title:  "Git basics: Create a fork and submit a pull request"
 author: David Smatlak
 permalink: git-fork-pull-request
 comments: false
+description: This article describes how to use Git to create a fork and submit a GitHub pull request.
 ---
 
 This article describes how to work in a shared repository where other people submit their commits.

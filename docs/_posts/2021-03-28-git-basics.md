@@ -4,6 +4,7 @@ title:  "Git basics: Get started with Git and GitHub"
 author: David Smatlak
 permalink: git-basics
 comments: false
+description: This article describes how to get started working with repositories in Git and GitHub.
 ---
 
 Many organizations treat documentation as code, so technical writers need to know how to use [Git](https://git-scm.com/docs)
