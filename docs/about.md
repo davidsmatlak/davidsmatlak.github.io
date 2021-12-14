@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Site info
-date: 2021-03-04
+date: 2021-12-12
 ---
 
 ## Software
@@ -20,6 +20,6 @@ To maintain the repository and build the site I use the following software:
 ## License
 
 If you want to share or redistribute any content, images, or code samples from this website, please
-follow the license guidelines.
+follow the license guidelines. Content and images use the Creative Commons license and code samples use the MIT license.
 
 {% include license.html %}
