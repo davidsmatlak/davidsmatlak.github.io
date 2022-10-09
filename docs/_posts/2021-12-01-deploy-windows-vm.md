@@ -86,9 +86,9 @@ var vnetPrefix = '10.0.0.0/16'
 var subnetName = 'vmSubnet1'
 var subnetPrefix = '10.0.0.0/24'
 
-resource nsg 'Microsoft.Network/networkSecurityGroups@2021-03-01' = {
+resource nsg 'Microsoft.Network/networkSecurityGroups@2022-01-01' = {
   name: nsgName
-  location: resourceGroup().location
+  location: location
   properties: {
     securityRules: [
       {
@@ -109,9 +109,9 @@ resource nsg 'Microsoft.Network/networkSecurityGroups@2021-03-01' = {
   }
 }
 
-resource bastionPublicIp 'Microsoft.Network/publicIPAddresses@2021-03-01' = {
+resource bastionPublicIp 'Microsoft.Network/publicIPAddresses@2022-01-01' = {
   name: bastionPublicIpName
-  location: resourceGroup().location
+  location: location
   sku: {
     name: 'Standard'
     tier: 'Regional'
@@ -123,9 +123,9 @@ resource bastionPublicIp 'Microsoft.Network/publicIPAddresses@2021-03-01' = {
   }
 }
 
-resource vnet 'Microsoft.Network/virtualNetworks@2021-03-01' = {
+resource vnet 'Microsoft.Network/virtualNetworks@2022-01-01' = {
   name: vnetName
-  location: resourceGroup().location
+  location: location
   properties: {
     addressSpace: {
       addressPrefixes: [
@@ -152,9 +152,9 @@ resource vnet 'Microsoft.Network/virtualNetworks@2021-03-01' = {
   }
 }
 
-resource nic 'Microsoft.Network/networkInterfaces@2021-03-01' = {
+resource nic 'Microsoft.Network/networkInterfaces@2022-01-01' = {
   name: nicName
-  location: resourceGroup().location
+  location: location
   properties: {
     networkSecurityGroup: {
       id: nsg.id
@@ -173,7 +173,7 @@ resource nic 'Microsoft.Network/networkInterfaces@2021-03-01' = {
   }
 }
 
-resource bastionHost 'Microsoft.Network/bastionHosts@2021-03-01' = {
+resource bastionHost 'Microsoft.Network/bastionHosts@2022-01-01' = {
   name: bastionHostName
   location: location
   properties: {
@@ -193,7 +193,7 @@ resource bastionHost 'Microsoft.Network/bastionHosts@2021-03-01' = {
   }
 }
 
-resource windowsVM 'Microsoft.Compute/virtualMachines@2021-07-01' = {
+resource windowsVM 'Microsoft.Compute/virtualMachines@2022-03-01' = {
   name: computerName
   location: location
   properties: {
@@ -260,7 +260,7 @@ create a new resource group named _vmdeployRG_.
 
 To run Azure PowerShell commands, connect to your Azure subscription.
 
-1. Sign in to the [Azure portal]().
+1. Sign in to the [Azure portal](https://portal.azure.com).
 1. From Visual Studio Code, open a terminal: **Terminal** > **New Terminal**.
 1. Run `Connect-AzAccount`.
 1. A browser window opens and prompts you to choose an account for Azure authentication.
@@ -279,7 +279,7 @@ New-AzResourceGroup -Name vmdeployRG -Location westus
 New-AzResourceGroupDeployment -ResourceGroupName vmdeployRG -TemplateFile main.bicep -Name demoDeploy
 ```
 
-The deployment command will prompt you for three values:
+The deployment command will prompt you for three values. Make note of the username and password because you'll need it later to access the VM.
 
 - vmName
 - adminUsername
@@ -298,9 +298,14 @@ When the deployment is complete, the results are shown in the terminal.
 You can use the deployment name to view details about a deployment:
 
 - From the portal, go to the resource group's **Settings** > **Deployments** and select the
-  deployment name. In this example, _demoDeploy_.
+  deployment name. In this example, _demoDeploy_. Expand **Deployment details** to see the list of resources that were deployed.
 - Use Azure PowerShell commands like [Get-AzResourceGroupDeployment](https://docs.microsoft.com/powershell/module/az.resources/get-azresourcegroupdeployment)
   or for details about each operation, [Get-AzResourceGroupDeploymentOperation](https://docs.microsoft.com/powershell/module/az.resources/get-azresourcegroupdeploymentoperation).
+
+   ```powershell
+   Get-AzResourceGroupDeployment -ResourceGroupName vmdeployRG
+   Get-AzResourceGroupDeploymentOperation -DeploymentName demoDeploy -ResourceGroupName vmdeployRG
+   ```
 
 ## Check the resources
 
