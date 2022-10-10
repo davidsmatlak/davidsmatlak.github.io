@@ -302,10 +302,10 @@ You can use the deployment name to view details about a deployment:
 - Use Azure PowerShell commands like [Get-AzResourceGroupDeployment](https://docs.microsoft.com/powershell/module/az.resources/get-azresourcegroupdeployment)
   or for details about each operation, [Get-AzResourceGroupDeploymentOperation](https://docs.microsoft.com/powershell/module/az.resources/get-azresourcegroupdeploymentoperation).
 
-   ```powershell
-   Get-AzResourceGroupDeployment -ResourceGroupName vmdeployRG
-   Get-AzResourceGroupDeploymentOperation -DeploymentName demoDeploy -ResourceGroupName vmdeployRG
-   ```
+  ```powershell
+  Get-AzResourceGroupDeployment -ResourceGroupName vmdeployRG
+  Get-AzResourceGroupDeploymentOperation -DeploymentName demoDeploy -ResourceGroupName vmdeployRG
+  ```
 
 ## Check the resources
 
@@ -330,7 +330,7 @@ When you're finished with the VM and want to remove all the resources, delete th
 Remove-AzResourceGroup -Name vmdeployRG
 ```
 
-To sign out of Azure from your terminal session use the following command:
+Sign out of Azure from your terminal session.
 
 ```powershell
 Disconnect-AzAccount
